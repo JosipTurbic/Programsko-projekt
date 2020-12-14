@@ -15,7 +15,7 @@
             class="form-control" 
             id="exampleInputEmail1" 
             aria-describedby="emailHelp" 
-            placeholder="Enter email"
+            placeholder="Unesi email"
             />
             <small id="emailHelp" class="form-text text-muted">
               Shh.. Nikome nećemo reći tvoju lozinku.
