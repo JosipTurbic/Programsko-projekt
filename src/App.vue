@@ -10,10 +10,11 @@
       <router-link to="/Vjezbe">Vježbe</router-link> |
       <router-link to="/Program">Moj program</router-link>
       <div id="naslov">BODYFIT</div>
+   
       
     </div>
     <router-view/>
-      <Footer />
+     
   </div>
 </template>
 
@@ -52,17 +53,5 @@ color:#FFFFFF;
 font-weight: bold;
 font-size: 30px;
 }
-.page-footer{
- bottom: 0;
- width: 100%;
-}
+
 </style>
-<script>
-import Footer from '@/components/Footer'
-export default {
-  name: 'App',
-  components: {
-    Footer
-  }
-}
-</script>

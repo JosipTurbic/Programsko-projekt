@@ -15,7 +15,7 @@
       Izmjeri indeks tjelesne mase
     </div>
   </div> 
- 
+   <Footer />
   </div>   
 
 
@@ -32,7 +32,22 @@
   color: #070707;
 
 }
+
+.page-footer{
+ bottom: 0;
+ width: 100%;
+}
+
 </style>
+<script>
+import Footer from '@/components/Footer'
+export default {
+  name: 'App',
+  components: {
+    Footer
+  }
+}
+</script>
 
 
 
