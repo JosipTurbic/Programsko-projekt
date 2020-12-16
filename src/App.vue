@@ -13,6 +13,7 @@
       
     </div>
     <router-view/>
+      <Footer />
   </div>
 </template>
 
@@ -51,4 +52,17 @@ color:#FFFFFF;
 font-weight: bold;
 font-size: 30px;
 }
+.page-footer{
+ bottom: 0;
+ width: 100%;
+}
 </style>
+<script>
+import Footer from '@/components/Footer'
+export default {
+  name: 'App',
+  components: {
+    Footer
+  }
+}
+</script>

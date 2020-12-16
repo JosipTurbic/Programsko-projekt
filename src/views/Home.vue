@@ -3,7 +3,7 @@
     <div>
     <img src="@/assets/teretana_002.jpg" width="100%" height="350"/>
     </div>
-  <div class="container"  height="1050">
+  <div class="container">
   <div class="row" >
     <div class="col align-self-start" id="slova">
       Pronađi željene vježbe
@@ -15,10 +15,13 @@
       Izmjeri indeks tjelesne mase
     </div>
   </div> 
+ 
   </div>   
-</div>
-  
 
+
+
+
+</div>
 
 </template>
 
@@ -30,6 +33,7 @@
 
 }
 </style>
+
 
 
 
