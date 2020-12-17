@@ -3,13 +3,13 @@
   <div id="app">
     <div  id="nav">
      
-    <router-link to="/">Početna</router-link> |
+      <router-link to="/">Početna</router-link> |
       <router-link to="/Login">Prijava</router-link> |
       <router-link to="/Signup">Registriraj se</router-link> | 
       <router-link to="/BMI">BMI</router-link> |
       <router-link to="/Vjezbe">Vježbe</router-link> |
       <router-link to="/Program">Moj program</router-link>
-      <div id="naslov">BODYFIT</div>
+      
    
       
     </div>
@@ -47,11 +47,6 @@
 }
 }
 
-#naslov {
-text-align: center;
-color:#FFFFFF;
-font-weight: bold;
-font-size: 30px;
-}
 
 </style>
+
