@@ -1,8 +1,14 @@
 <template>
 
   <div id="app">
-    <div  id="nav">
-     
+    <nav  id="nav" class="navbar navbar-light bg-light">
+     <!-- Image and text -->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="@/assets/logo.png" alt="" width="50"  class="d-inline-block align-top">
+      BodyFit
+    </a>
+  </div>
       <router-link to="/">Početna</router-link> |
       <router-link to="/Login">Prijava</router-link> |
       <router-link to="/Signup">Registriraj se</router-link> | 
@@ -12,7 +18,7 @@
       
    
       
-    </div>
+    </nav>
     <router-view/>
      
   </div>
@@ -31,7 +37,7 @@
 #nav {
   padding: 30px;
   text-align: left;
-  background-color:#00BFFF; 
+  background-color:#00BFFF !important; 
   
 
   a {
