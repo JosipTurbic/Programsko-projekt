@@ -101,13 +101,13 @@
 export default {
   data() {
     return {
-      tezina: '', // hardkodirano za
-      visina: '' // potrebe primjera
+      tezina: '', 
+      visina: '' 
     }
   },
   computed: {
     zbr: function() {
-      return Number(this.tezina) / Number((this.visina/100)*(this.visina/100))
+      return (Number(this.tezina) / Number((this.visina/100)*(this.visina/100))).toFixed(1)
     
     }
     
