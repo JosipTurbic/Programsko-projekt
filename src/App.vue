@@ -1,28 +1,50 @@
 <template>
 
   <div id="app">
-    <nav  id="nav" class="navbar navbar-light bg-light">
-     <!-- Image and text -->
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="@/assets/logo.png" alt="" width="50"  class="d-inline-block align-top">
-      BodyFit
-    </a>
-  </div>
-      <router-link to="/">Početna</router-link> |
-      <router-link to="/BMI">BMI</router-link> |
-      <router-link to="/Vjezbe">Vježbe</router-link> |
-      <router-link to="/Program">Moj program</router-link> |
-      <router-link to="/Login" v-if="!store.currentUser">Prijava</router-link> |
-      <router-link to="/Signup" v-if="!store.currentUser">Registriraj se</router-link> | 
-      <a href="#" @click.prevent="logout()" v-if="store.currentUser">Odjavi se</a>
-      
-   
-      
-    </nav>
-    <router-view/>
+        <nav id="nav" class="navbar navbar-expand-md navbar-light">
+            <router-link to="/" class="navbar-brand">
+                <img src="@/assets/icon.png" height="50" class="d-inline-block align-top" alt="" loading="lazy" />
+            </router-link>
+            
+     <li class="nav-item"> <router-link to="/" class="nav-link">Početna</router-link> </li>
+     <li class="nav-item"> <router-link to="/BMI" class="nav-link">BMI</router-link> </li>
+     <li class="nav-item"> <router-link to="/Vjezbe" class="nav-link">Vježbe</router-link> </li>
+     <li class="nav-item"> <router-link to="/Program" class="nav-link">Moj program</router-link> </li>
      
-  </div>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarToggler"
+                aria-controls="navbarToggler"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+              
+                <!-- Image and text -->
+                <ul class="navbar-nav ml-auto">
+                    <li v-if="!store.currentUser" class="nav-item">
+                        <router-link to="/Login" class="nav-link">Login</router-link>
+                    </li>
+                    <li v-if="!store.currentUser" class="nav-item">
+                        <router-link to="/Signup" class="nav-link">Sign up</router-link>
+                    </li>
+                </ul>
+                <li v-if="store.currentUser" class="nav-item">
+                        <a href="#" @click.prevent="logout()" >Odjavi se</a>
+                    </li>
+            </div>
+        </nav>
+
+        
+            <router-view />
+            
+      
+    </div>
 </template>
 
 <style lang="scss">
@@ -37,7 +59,7 @@
 
 #nav {
   padding: 30px;
-  text-align: left;
+ 
   background-color:#00BFFF !important; 
   
 
@@ -49,7 +71,7 @@
       color: #FFFF00;
     }
   }
-  ul {
+  li {
     list-style-type: none;
 }
 }
