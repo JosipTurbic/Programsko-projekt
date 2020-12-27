@@ -10,11 +10,12 @@
     </a>
   </div>
       <router-link to="/">Početna</router-link> |
-      <router-link to="/Login">Prijava</router-link> |
-      <router-link to="/Signup">Registriraj se</router-link> | 
       <router-link to="/BMI">BMI</router-link> |
       <router-link to="/Vjezbe">Vježbe</router-link> |
-      <router-link to="/Program">Moj program</router-link>
+      <router-link to="/Program">Moj program</router-link> |
+      <router-link to="/Login" v-if="!store.currentUser">Prijava</router-link> |
+      <router-link to="/Signup" v-if="!store.currentUser">Registriraj se</router-link> | 
+      <a href="#" @click.prevent="logout()" v-if="store.currentUser">Odjavi se</a>
       
    
       
@@ -55,4 +56,46 @@
 
 
 </style>
+<script>
+import store from '@/store';
+import{firebase} from '@/firebase';
+import router from '@/router';
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in.
+    console.log('***',user.email);
+    store.currentUser = user.email;
+  }else{
+    //User is not signed in.
+    console.log('No user');
+    store.currentUser = null;
+    
+    if(router.name !== 'Login'){
+      router.push({name: 'Login'})
+    }
+   
+  }
+});
+
+export default {
+  name:'app',
+  data(){
+    return{
+      store,
+    };
+  },
+  methods: {
+    logout(){
+      firebase
+      .auth()
+      .signOut()
+      .then(() =>{
+        this.$router.push({name: 'Login'});
+      });
+    },
+  },
+  
+}
+</script>
 

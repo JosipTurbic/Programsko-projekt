@@ -47,7 +47,7 @@
                   </div>
                   </div>
                   <div id="centar">
-                <p>"Vaš indeks tjelesne mase je: "{{zbr}}</p>
+                <p>Vaš indeks tjelesne mase je: {{zbr}}</p>
                 <table class="table">
   <thead>
     <tr>

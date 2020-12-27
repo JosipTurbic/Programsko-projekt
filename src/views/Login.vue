@@ -10,7 +10,8 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Email adresa</label>
             <input 
-            type="email" 
+            type="email"
+            v-model="username" 
             class="form-control" 
             id="exampleInputEmail1" 
             aria-describedby="emailHelp" 
@@ -23,13 +24,14 @@
               <div class="form-group">
                 <label for="exampleInputPassword1">Lozinka</label>
                 <input
+                v-model="password"
                 type="password" 
                 class="form-control"
                 id="exampleInputPassword1"
                 placeholder="Lozinka"
                 />
                 </div>
-                <button type="submit" class="btn btn-primary">Prijava</button>
+                <button type="button" @click="login()" class="btn btn-primary">Prijava</button>
                 </form>
                 </div>
                 <div class="col-sm">
@@ -38,3 +40,38 @@
                   </div>
                   </div>
                   </template>
+
+<script>
+
+import {firebase} from '@/firebase';
+
+export default {
+  name: "login",
+  data(){
+    return{
+      username:"",
+      password:""
+    }
+  },
+
+  methods:{
+    login(){
+      console.log("login....");
+      
+
+      firebase
+      .auth()
+      .signInWithEmailAndPassword(this.username, this.password)
+      .then((result) =>{
+        console.log("Uspjesna prijava",result);
+
+        this.$router.replace({name:'home'});
+
+      })
+      .catch(function(e){
+        console.error('greška',e);
+      });
+    }
+  }
+}
+</script>
