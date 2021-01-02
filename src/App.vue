@@ -1,5 +1,4 @@
 <template>
-
   <div id="app">
         <nav id="nav" class="navbar navbar-expand-md navbar-light">
             <router-link to="/" class="navbar-brand">
@@ -8,10 +7,20 @@
             
      <li class="nav-item"> <router-link to="/" class="nav-link">Početna</router-link> </li>
      <li class="nav-item"> <router-link to="/BMI" class="nav-link">BMI</router-link> </li>
-     <li class="nav-item"> <router-link to="/Vjezbe" class="nav-link">Vježbe</router-link> </li>
-     <li class="nav-item"> <router-link to="/Program" class="nav-link">Moj program</router-link> </li>
-     
 
+
+<div class="dropdown">
+ <button class="dropbtn">Vježbe
+  <i class="fa fa-caret-down"></i>
+ </button>
+    <div class="dropdown-content">
+      <li class="nav-item"> <router-link to="/Sklekovi" class="nav-link">Sklekovi</router-link> </li>
+     <li class="nav-item"> <router-link to="/Trbusnjaci" class="nav-link"> Trbušnjaci</router-link> </li>
+      <li class="nav-item"> <router-link to="/Zgibovi" class="nav-link"> Zgibovi</router-link> </li>
+    </div>
+  </div>
+
+     <li class="nav-item"> <router-link to="/Program" class="nav-link">Moj program</router-link> </li>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -74,9 +83,53 @@
   li {
     list-style-type: none;
 }
+.dropdown {
+  float: left;
+  overflow: hidden;
 }
 
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; 
+  margin: 0; 
+}
 
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: green;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: blue;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+}
 </style>
 <script>
 import store from '@/store';
