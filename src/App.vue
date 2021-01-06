@@ -11,11 +11,12 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="nav">
+          <a class="dropdown-item" href="#">Leđa</a>
+          <a class="dropdown-item" href="#">Prsa</a>
+          <a class="dropdown-item" href="#">Biceps</a>
+          <a class="dropdown-item" href="#">Triceps</a>
+          <a class="dropdown-item" href="#">Noge</a>
         </div>
       </li>
      <li class="nav-item"> <router-link to="/Program" class="nav-link">Moj program</router-link> </li>
@@ -74,6 +75,7 @@
   a {
     font-weight: bold;
     color: #FFFFFF;
+    background-color: #00BFFF;
 
     &.router-link-exact-active {
       color: #FFFF00;
@@ -82,53 +84,10 @@
   li {
     list-style-type: none;
 }
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
 
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; 
-  margin: 0; 
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: green;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: blue;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 
 }
+
 </style>
 <script>
 import store from '@/store';
