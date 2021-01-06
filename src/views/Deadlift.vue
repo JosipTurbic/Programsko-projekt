@@ -22,6 +22,7 @@ tehniku izvođenja vježbe.
 
     </div>
 </template>
+
 <style scoped>
 
 </style>

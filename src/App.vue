@@ -7,18 +7,12 @@
             
      <li class="nav-item"> <router-link to="/" class="nav-link">Početna</router-link> </li>
      <li class="nav-item"> <router-link to="/BMI" class="nav-link">BMI</router-link> </li>
- 
 
-<div class="dropdown">
- <button class="dropbtn">Vježbe
-  <i class="fa fa-caret-down"></i>
- </button>
-    <div class="dropdown-content">
-      <li class="nav-item"> <router-link to="/Zgib" class="nav-link">Zgib</router-link> </li>
      <li class="nav-item"> <router-link to="/Trbusnjaci" class="nav-link"> Trbušnjaci</router-link> </li>
-      <li class="nav-item"> <router-link to="/Deadlift" class="nav-link"> Deadlift / Mrtvo dizanje</router-link> </li>
-    </div>
-  </div>
+      <li class="nav-item"> <router-link to="/Sklekovi" class="nav-link"> Sklekovi </router-link> </li>
+            <li class="nav-item"> <router-link to="/Deadlift" class="nav-link"> Deadlift / Mrtvo dizanje</router-link> </li>
+      <li class="nav-item"> <router-link to="/Hiperekstenzija" class="nav-link"> Hiperekstenzija</router-link> </li>
+       <li class="nav-item"> <router-link to="/Zgib" class="nav-link">Zgib</router-link> </li>
 
      <li class="nav-item"> <router-link to="/Program" class="nav-link">Moj program</router-link> </li>
             <button
