@@ -1,0 +1,1 @@
+Ovdje dodaj nekoliko vjezbi za leda

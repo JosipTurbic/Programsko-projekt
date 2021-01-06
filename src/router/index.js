@@ -94,7 +94,52 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Program.vue')
-  }
+  },
+  {
+    path: '/Leda',
+    name: 'Leda',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Leda.vue')
+    
+  },
+  {
+    path: '/Prsa',
+    name: 'Prsa',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Prsa.vue')
+    
+  },
+  {
+    path: '/Biceps',
+    name: 'Biceps',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Biceps.vue')
+    
+  },
+  {
+    path: '/Triceps',
+    name: 'Triceps',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Triceps.vue')
+    
+  },
+  {
+    path: '/Noge',
+    name: 'Noge',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Noge.vue')
+    
+  },
 ]
 
 const router = new VueRouter({

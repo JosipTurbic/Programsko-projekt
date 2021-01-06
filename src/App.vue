@@ -9,14 +9,14 @@
      <li class="nav-item"> <router-link to="/BMI" class="nav-link">BMI</router-link> </li>
      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Vježbe
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="nav">
-          <a class="dropdown-item" href="#">Leđa</a>
-          <a class="dropdown-item" href="#">Prsa</a>
-          <a class="dropdown-item" href="#">Biceps</a>
-          <a class="dropdown-item" href="#">Triceps</a>
-          <a class="dropdown-item" href="#">Noge</a>
+          <a class="dropdown-item"><router-link to="/Leda" class="nav-link">Leđa</router-link></a>
+          <a class="dropdown-item"><router-link to="/Prsa" class="nav-link">Prsa</router-link></a>
+          <a class="dropdown-item"><router-link to="/Biceps" class="nav-link">Biceps</router-link></a>
+          <a class="dropdown-item"><router-link to="/Triceps" class="nav-link">Triceps</router-link></a>
+          <a class="dropdown-item"><router-link to="/Noge" class="nav-link">Noge</router-link></a>
         </div>
       </li>
      <li class="nav-item"> <router-link to="/Program" class="nav-link">Moj program</router-link> </li>
