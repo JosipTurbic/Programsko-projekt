@@ -7,14 +7,19 @@
             
      <li class="nav-item"> <router-link to="/" class="nav-link">Početna</router-link> </li>
      <li class="nav-item"> <router-link to="/BMI" class="nav-link">BMI</router-link> </li>
-
-     <li class="nav-item"> <router-link to="/Trbusnjaci" class="nav-link"> Trbušnjaci</router-link> </li>
-      <li class="nav-item"> <router-link to="/Sklekovi" class="nav-link"> Sklekovi </router-link> </li>
-            <li class="nav-item"> <router-link to="/Deadlift" class="nav-link"> Deadlift / Mrtvo dizanje</router-link> </li>
-      <li class="nav-item"> <router-link to="/Hiperekstenzija" class="nav-link"> Hiperekstenzija</router-link> </li>
-       <li class="nav-item"> <router-link to="/Zgib" class="nav-link">Zgib</router-link> </li>
-
+     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
      <li class="nav-item"> <router-link to="/Program" class="nav-link">Moj program</router-link> </li>
+     
             <button
                 class="navbar-toggler"
                 type="button"
@@ -131,16 +136,24 @@ import{firebase} from '@/firebase';
 import router from '@/router';
 
 firebase.auth().onAuthStateChanged((user) => {
+
+  const currentRoute = router.currentRoute;
+
   if (user) {
     // User is signed in.
     console.log('***',user.email);
     store.currentUser = user.email;
+
+    if(!currentRoute.meta.needsUser){
+      router.push({name: 'Home'})
+    }
+
   }else{
     //User is not signed in.
     console.log('No user');
     store.currentUser = null;
     
-    if(router.name !== 'Login'){
+    if(currentRoute.meta.needsUser){
       router.push({name: 'Login'})
     }
    
