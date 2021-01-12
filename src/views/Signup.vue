@@ -43,6 +43,7 @@
             />
             </div>
 
+
                 <button type="button" @click="signup" class="btn btn-primary">Pošalji</button>
                 </form>
                 </div>
@@ -64,7 +65,9 @@ export default {
       password: '',
       passwordRepeat: '',
     };
-  },
+    },
+     
+  
   methods: {
       signup(){
         firebase

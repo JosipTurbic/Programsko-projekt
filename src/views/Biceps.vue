@@ -9,7 +9,7 @@
 
                     <p> Nešto jednostavnija vježba no jako efikasna za jačanje bicepsa.</p>
 
-                    <img class="card-img-top" src=""/>
+                    <img class="card-img-top" src="@/assets/Bicab.gif"/>
 
                     <h3> Kako pravilno izvesti vježbu </h3>
 
@@ -17,9 +17,10 @@
                          Dignite uteg prema sebi s pregibom ruke u laktu, zadržite na sekundu i lagano ispuštajte u početni položaj. 
                          Jako je važno da nema nikakvog gibanja tijela već da samo biceps radi, jer ako nije tako, onda "trošite" ostale mišiće tijela, a ne onaj koji bi trebali. </p>
 
-                </div>
+                
 
-                <button>Dodaj u moj program</button>
+                <button id="btn">Dodaj u moj program</button>
+                </div>
 
             </div>
 
@@ -30,16 +31,16 @@
                 <div class="card-body p-0">
                     <p> Jedna od vrlo efikasnih vježbi za jačanje bicepsa koja zahtjeva dosta koncentracije </p>
 
-                    <img class="card-img-top" src=""/>
+                    <img class="card-img-top" src="@/assets/Bicaa.gif"/>
 
                     <h3> Kako pravilno izvesti vježbu </h3>
 
                      <p> Noge moraju biti stabilno na podu, u širini ramena. Stupite pred štangu, ramena nazad, prsa van, ruke su u visećem položaju kao da stojite "mirno".Dižite lagano štangu, ruke su priljepljene uz tijelo, odnosno laktovi se ne miču od tijela. 
                          Ne zaboravite držati ramena nazad i prsa van, zato da ramenski mišići ne bi pomagali pri podizanju štange. </p>
-                </div>
+                
 
-                <button>Dodaj u moj program</button>
-
+                <button id="btn">Dodaj u moj program</button>
+            </div>
             </div>
              <div class="car text-center">
                 <div class="card-header">
@@ -49,17 +50,17 @@
 
                     <p> Pravilnim drzanjem i radom ove vježbe vidjet ćete rezultate vrlo brzo </p>
 
-                    <img class="card-img-top" src=""/>
+                    <img class="card-img-top" src="@/assets/Bicat.gif"/>
 
                     <h3> Kako pravilno izvesti vježbu </h3>
                     
                     <p> Stanite stabilno na pod kako nebi bilo ljuljanja tijekom izvođenja vježbe. Koljena su lagano skvrčena. Primite palicu s dlanovima okrenutima prema gore,uski hvat. 
                         Lagano potegnite palicu prema sebi i lagano ju ispuštajte.</p>
 
+                
+
+                <button id="btn">Dodaj u moj program</button>
                 </div>
-
-                <button>Dodaj u moj program</button>
-
                  <div class="car text-center">
                 <div class="card-header">
                     Vježba 4 - Pregib bučicama na kosoj klupi
@@ -68,7 +69,7 @@
 
                     <p> Nešto jednostavnija vježba, no jako efikasna za jačanje bicepsa. Povećavanjem težite otežavate vježbu</p>
 
-                    <img class="card-img-top" src=""/>
+                    <img class="card-img-top" src="@/assets/Bicac.gif"/>
 
                     <h3> Kako pravilno izvesti vježbu </h3>
 
@@ -77,10 +78,10 @@
                         Ruka sama po sebi treba slijediti putanju do ramena, nema nikakvog zaljetanja, već sve se radi polagano. Kao i kod ostalih vježbi, tijelo se ne miče - samo ruke rade !
                      </p>
 
+                
+
+                <button id="btn">Dodaj u moj program</button>
                 </div>
-
-                <button>Dodaj u moj program</button>
-
             </div>
 
              <div class="car text-center">
@@ -91,7 +92,7 @@
 
                     <p> Nešto jednostavnija vježba no jako efikasna za jačanje bicepsa.</p>
 
-                    <img class="card-img-top" src=""/>
+                    <img class="card-img-top" src="@/assets/Bicap.gif"/>
 
                     <h3> Kako pravilno izvesti vježbu </h3>
 
@@ -100,10 +101,11 @@
                          Trup tijela je fiksiran u stabilnom položaju. Držimo na vrhu pokreta sekundu šipku s maksimalnom kontrakcijom bicepsa i polako vraćamo ruke u početni položaj. 
                          Duboko udahnemo kada spuštamo šipku u donji ili niži položaj. </p>
 
-                </div>
+            
 
-                <button>Dodaj u moj program</button>
+                <button id="btn">Dodaj u moj program</button>
 
+            </div>
             </div>
             </div>
          </div>

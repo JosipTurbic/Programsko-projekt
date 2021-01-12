@@ -8,18 +8,19 @@
 
                 <div class="card-body p-0">
 
-                    <p> </p>
+                    
 
-                    <img class="card-img-top" src=""/>
+                    <img class="card-img-top" src="@/assets/Tricap.gif"/>
 
                     <h3> Kako pravilno izvesti vježbu </h3>
 
-                    <p> Stanite pred lat mašinu i primite palicu, u širini ramena, s dlanovima okrenutima prema dolje. Ruke moraju biti u laktovima pod 90° i ne zaboravite držati ramena nazad, prsa van, što vam govorim od samog početka. Palicu potisnite prema dolje dok ne izravnate ruke i ne dozvolite da se laktovi previše odvoje od tijela. Palici dozvolite da se digne do visine laktova, ali cijelo vrijeme morate osjetiti napetost u tricepsima. 
+                    <p> Stanite pred lat mašinu i primite palicu, u širini ramena, s dlanovima okrenutima prema dolje. Ruke moraju biti u laktovima pod 90° i ne zaboravite držati ramena nazad, prsa van. Palicu potisnite prema dolje dok ne izravnate ruke i ne dozvolite da se laktovi previše odvoje od tijela. Palici dozvolite da se digne do visine laktova, ali cijelo vrijeme morate osjetiti napetost u tricepsima. 
                      Noge raširite u širinu ramena, koljena lagano skvrčite kako biste bili u stabilnom položaju. Napnite trbuh kako bi umirili trup i spriječili ljuljanje</p>
-                </div>
+                
 
-                    <button>Dodaj u moj program</button>
+                    <button id="btn">Dodaj u moj program</button>
 
+            </div>
             </div>
              <div class="car text-center">
                 <div class="card-header">
@@ -27,9 +28,9 @@
                 </div>
                 <div class="card-body p-0">
 
-                    <p> </p>
+                    
 
-                    <img class="card-img-top" src=""/>
+                    <img class="card-img-top" src="@/assets/Tricad.gif"/>
 
                     <h3> Kako pravilno izvesti vježbu </h3>
 
@@ -37,10 +38,11 @@
                         Podlaktice se gibaju po određenoj putanji, a nadlaktice se ne miču! Također je važno da ne koristite prevelike težine i da ne spuštate prebrzo. 
                         Većina ljudi si dozvoli da im laktovi "odšeću" prema glavi i pomažu si leđnim mišićima da dignu štangu - tako ćete razviti leđne mišiće, a tricepsi će ostati isti. </p>
 
-                </div>
+                
 
-                    <button>Dodaj u moj program</button>
+                    <button id="btn">Dodaj u moj program</button>
 
+            </div>
             </div>
              <div class="car text-center">
                 <div class="card-header">
@@ -48,18 +50,19 @@
                 </div>
                 <div class="card-body p-0">
 
-                    <p> </p>
+                    
 
-                    <img class="card-img-top" src=""/>
+                    <img class="card-img-top" src="@/assets/Tricat.gif"/>
 
                     <h3> Kako pravilno izvesti vježbu </h3>
-                    <p>Unutarnju ruku, odnosno onu ruku kojom ne radite, položite na klupicu ili na loptu. Tijelo mora biti u pravilnom položaju tijekom cijele vježbe, nema krivljenja - kičma je ravna, noge u stabilnom položaju, koljena lagano skvrčena. Uteg dignite sve dok ne ispružite ruku do kraja.
-                        Istegnite ruku usporedno sa tijelom, zatim lagano ispuštajte do okomitog položaja. Samo ruka radi, a svi ostali dijelovi tijela se ne miču!</p>
+                    <p> Sjednite na klupu i primite bučicu u ruke. Tijelo mora biti u pravilnom položaju tijekom cijele vježbe, nema krivljenja - kičma je ravna, noge u stabilnom položaju, koljena lagano skvrčena. Uteg dignite sve dok ne ispružite ruke do kraja.
+                        Istegnite ruke iznad glave, zatim lagano ispuštajte do razine vrata. Samo ruke rade, a svi ostali dijelovi tijela se ne miču!</p>
 
-                </div>
                 
-                    <button>Dodaj u moj program</button>
+                
+                    <button id="btn">Dodaj u moj program</button>
 
+            </div>
             </div>
              <div class="car text-center">
                 <div class="card-header">
@@ -67,40 +70,39 @@
                 </div>
                 <div class="card-body p-0">
 
-                    <p>  </p>
 
-                    <img class="card-img-top" src=""/>
+                    <img class="card-img-top" src="@/assets/Tricac.gif"/>
 
                     <h3> Kako pravilno izvesti vježbu </h3>
 
                     <p>Potisak na benchu je odlična vježba za prsa i core. Ali promjena hvata može učiniti čuda za ruke. Primite šipku s dlanovima okrenutim prema dolje, a rukama u širini ramena i držite je iznad grudne kosti s potpuno ispruženim rukama. 
                        Spustite šipku, pauzirajte i potisnite je nazad u početnu poziciju. </p>
 
+                
+
+                <button id="btn">Dodaj u moj program</button>
                 </div>
-
-                <button>Dodaj u moj program</button>
-
 <div class="car text-center">
                 <div class="card-header">
-                    Vježba 5 - Potisak girjama na podu
+                    Vježba 5 - Potisak girjama u stojećem položaju
                 </div>
                 <div class="card-body p-0">
 
-                    <p> </p>
+                    
 
-                    <img class="card-img-top" src=""/>
+                    <img class="card-img-top" src="@/assets/Tricaz.gif"/>
 
                     <h3> Kako pravilno izvesti vježbu </h3>
 
-                 <p>Ova varijacija klasičnog potiska na benchu omogućava lockout, koji uključuje bicepse na ekstreman način. : Primite girje, svaku u jednu ruku i lezite na pod. 
-                     Držite girje iznad glave tako da se ona nalazi s vanjske strane zgloba. Savinite ruke kako bi spustili girje. 
-                     Laktovima dodirnite pod, pauzirajte, a zatim ih opet potisnite iznad glave. </p>
-                </div>
+                 <p>Primite girje u jednu ruku, a drugom rukom se uhvatite za spravu. 
+                     Lagano savinite leđa i gornji dio ruke držite uspravno uz tijelo.
+                      Lakat savijajte do 90 stupnjeva i vucite dok ne ispravite ruku i ne dovedete je u potpuno ispravljen položaj. Nakon odrađene serije, promijenite ruku. </p>
+                
 
-                    <button>Dodaj u moj program</button>
+                    <button id="btn">Dodaj u moj program</button>
 
             </div>
-
+            </div>
             </div>
         </div>
     </div>
