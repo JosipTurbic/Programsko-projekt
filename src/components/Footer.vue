@@ -44,7 +44,7 @@
   <!-- Footer Links -->
 <hr>
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
     <a>Bodyfit</a>
   </div>
   <!-- Copyright -->

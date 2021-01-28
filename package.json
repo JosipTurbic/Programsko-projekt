@@ -11,6 +11,7 @@
     "firebase": "^8.1.2",
     "git": "^0.1.5",
     "vue": "^2.6.11",
+    "vue-list-scroller": "^1.1.0",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {
