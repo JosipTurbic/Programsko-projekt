@@ -143,6 +143,9 @@
   </div>
 </template>
 <script>
+import store from '@/store';
+import {db} from '@/firebase';
+  
 export default {
   data() {
     return {
@@ -155,25 +158,25 @@ export default {
       },
     };
   },
+  async mounted() {
+   console.log(store);
+    this.userRef = await db.collection("exercises").doc(store.currentUser);
+    const allexercises = await this.userRef.get();
+    this.currentUserExercises = allexercises.data();
+    console.log(this.currentUserExercises);
+  },
   methods: {
     addExe(img) {
       let keyName = "Noge";
-      let noges = [];
-      if (localStorage[keyName]) {
-        noges = JSON.parse(localStorage[keyName]);
+      if (this.currentUserExercises[keyName].includes(img)){
+        alert("Vježba je već dodana");
+      } else {
+          this.currentUserExercises[keyName].push(img);
+          this.userRef.set({[keyName]:  this.currentUserExercises[keyName]
+          }, { merge: true });
       }
-      let flag = true;
-
-      noges.forEach((url) => {
-        if (img == url) {
-          alert("Already added");
-          flag = false;
-        }
-      });
-      if (flag) noges.push(img);
-
-      localStorage[keyName] = JSON.stringify(noges);
     },
   },
 };
 </script>
+

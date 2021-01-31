@@ -10,7 +10,7 @@
               Nešto jednostavnija vježba no jako efikasna za jačanje bicepsa.
             </p>
 
-            <img class="card-img-top" :src="vjezbe[0].url" />
+            <img class="card-img-top" :src="imgs.bicab" />
 
             <h3>Kako pravilno izvesti vježbu</h3>
 
@@ -23,7 +23,7 @@
               "trošite" ostale mišiće tijela, a ne onaj koji bi trebali.
             </p>
 
-            <button @click="addExe(vjezbe[0].url)" id="1">Dodaj u moj program</button>
+            <button @click="addExe(imgs.bicab)" id="btn">Dodaj u moj program</button>
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@
             dosta koncentracije
           </p>
 
-          <img class="card-img-top" :src="vjezbe[1].url" />
+          <img class="card-img-top" :src="imgs.bicaa" />
 
           <h3>Kako pravilno izvesti vježbu</h3>
 
@@ -49,7 +49,7 @@
             podizanju štange.
           </p>
 
-          <button @click="addExe(vjezbe[1].url)" id="1">Dodaj u moj program</button>
+          <button @click="addExe(imgs.bicaa)" id="btn">Dodaj u moj program</button>
         </div>
       </div>
       <div class="car text-center">
@@ -60,7 +60,7 @@
             brzo
           </p>
 
-          <img class="card-img-top" :src="vjezbe[2].url" />
+          <img class="card-img-top" :src="imgs.bicat" />
 
           <h3>Kako pravilno izvesti vježbu</h3>
 
@@ -71,7 +71,7 @@
             i lagano ju ispuštajte.
           </p>
 
-          <button @click="addExe(vjezbe[2].url)" id="btn">Dodaj u moj program</button>
+          <button @click="addExe(imgs.bicat)" id="btn">Dodaj u moj program</button>
         </div>
         <div class="car text-center">
           <div class="card-header">
@@ -83,7 +83,7 @@
               Povećavanjem težite otežavate vježbu
             </p>
 
-            <img class="card-img-top" :src="vjezbe[3].url" />
+            <img class="card-img-top" :src="imgs.bicac" />
 
             <h3>Kako pravilno izvesti vježbu</h3>
 
@@ -98,7 +98,7 @@
               ruke rade !
             </p>
 
-            <button @click="addExe(vjezbe[3].url)" id="btn">Dodaj u moj program</button>
+            <button @click="addExe(imgs.bicac)" id="btn">Dodaj u moj program</button>
           </div>
         </div>
 
@@ -109,7 +109,7 @@
               Nešto jednostavnija vježba no jako efikasna za jačanje bicepsa.
             </p>
 
-            <img class="card-img-top" :src="vjezbe[4].url" />
+            <img class="card-img-top" :src="imgs.bicap" />
 
             <h3>Kako pravilno izvesti vježbu</h3>
 
@@ -123,7 +123,7 @@
               Duboko udahnemo kada spuštamo šipku u donji ili niži položaj.
             </p>
 
-            <button @click="addExe(vjezbe[4].url)" id="btn">Dodaj u moj program</button>
+            <button @click="addExe(imgs.bicap)" id="btn">Dodaj u moj program</button>
           </div>
         </div>
       </div>
@@ -131,64 +131,38 @@
   </div>
 </template>
 <script>
-const STORAGE_KEY = "vjezba-storage";
-
+import store from '@/store';
+  import {db} from '@/firebase';
+  
 export default {
-  name: "app",
-  props: ["info"],
   data() {
     return {
-      vjezbe: [
-        {
-          id: "1",
-          naziv: "Vježba 1 - Pregib bučicama u pretklonu",
-          url: require("@/assets/Bicab.gif"),
+      imgs: {
+          bicab: require("@/assets/Bicab.gif"),
+          bicaa: require("@/assets/Bicaa.gif"),
+          bicat: require("@/assets/Bicat.gif"),
+          bicac: require("@/assets/Bicac.gif"),
+         bicap: require("@/assets/Bicap.gif"),
         },
-        {
-          id: "2",
-          naziv: "Vježba 2 - Pregib sa štanglom",
-          url: require("@/assets/Bicaa.gif"),
-        },
-        {
-          id: "3",
-          naziv: "Vježba 3 - Pregib kabelom",
-          url: require("@/assets/Bicat.gif"),
-        },
-        {
-          id: "4",
-          naziv: "Vježba 4 - Pregib bučicama na kosoj klupi",
-          url: require("@/assets/Bicac.gif"),
-        },
-        {
-          id: "5",
-          naziv: "Vježba 5 - Pregib s velikom šipkom",
-          url: require("@/assets/Bicap.gif"),
-        },
-      ],
-      vjezba: "",
     };
   },
+  async mounted() {
+   console.log(store);
+    this.userRef = await db.collection("exercises").doc(store.currentUser);
+    const allexercises = await this.userRef.get();
+    this.currentUserExercises = allexercises.data();
+    console.log(this.currentUserExercises);
+  },
   methods: {
-    getNazivByIndex({ vjezbe = [], index = 0 }) {
-      return vjezbe[index] || {};
-    },
     addExe(img) {
-      let keyName = "Bicep";
-      let noges = [];
-      if (localStorage[keyName]) {
-        noges = JSON.parse(localStorage[keyName]);
+      let keyName = "Biceps";
+      if (this.currentUserExercises[keyName].includes(img)){
+        alert("Vježba je već dodana");
+      } else {
+          this.currentUserExercises[keyName].push(img);
+          this.userRef.set({[keyName]:  this.currentUserExercises[keyName]
+          }, { merge: true });
       }
-      let flag = true;
-
-      noges.forEach((url) => {
-        if (img == url) {
-          alert("Already added");
-          flag = false;
-        }
-      });
-      if (flag) noges.push(img);
-
-      localStorage[keyName] = JSON.stringify(noges);
     },
   },
 };

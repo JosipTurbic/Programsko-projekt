@@ -11,8 +11,9 @@
           <h3>Leđa</h3>
         </div>
 
-        <div class="col align-left text" v-for="exe in Leda" :key="exe">
+        <div class="col align-left text" v-for="exe in currentUserExercises.Leda" :key="exe">
           <img :src="exe" alt="" />
+          <span @click="removeExe('Leda', exe)">&times;</span>
         </div>
 
         <div class="col align-left text">
@@ -38,8 +39,9 @@
         <div class="col align-left text">
           <h3>Prsa</h3>
         </div>
-        <div class="col align-left text" v-for="exe in Prsa" :key="exe">
+        <div class="col align-left text" v-for="exe in currentUserExercises.Prsa" :key="exe">
           <img :src="exe" alt="" />
+          <span @click="removeExe('Prsa', exe)">&times;</span>
         </div>
         <div class="col align-left text">
           <h3>
@@ -64,8 +66,9 @@
         <div class="col align-left text">
           <h3>Triceps</h3>
         </div>
-        <div class="col align-left text" v-for="exe in Tricep" :key="exe">
+        <div class="col align-left text" v-for="exe in currentUserExercises.Triceps" :key="exe">
           <img :src="exe" alt="" />
+          <span @click="removeExe('Triceps', exe)">&times;</span>
         </div>
         <div class="col align-left text">
           <h3>
@@ -90,8 +93,10 @@
         <div class="col align-left text">
           <h3>Biceps</h3>
         </div>
-        <div class="col align-left text" v-for="exe in Bicep" :key="exe">
+        <div class="col align-left text" v-for="exe in currentUserExercises.Biceps" :key="exe">
+         
           <img :src="exe" alt="" />
+           <span @click="removeExe('Biceps', exe)">&times;</span>
         </div>
         <div class="col align-left text">
           <h3>
@@ -117,8 +122,9 @@
         <div class="col align-left text">
           <h3>Noge</h3>
         </div>
-        <div class="col align-left text" v-for="exe in Noge" :key="exe">
+        <div class="col align-left text" v-for="exe in currentUserExercises.Noge" :key="exe">
           <img :src="exe" alt="" />
+          <span @click="removeExe('Noge', exe)">&times;</span>
         </div>
         <div class="col align-left text">
           <h3>
@@ -146,31 +152,48 @@
 
 
 <script>
-const STORAGE_KEY = "vjezba-storage";
+ import store from '@/store';
+import {db} from '@/firebase';
+  
 export default {
   name: "app",
   props: ["info"],
-  mounted() {
-    // if (localStorage.getItem("this.vjezba"))
-    // this.vjezbe = JSON.parse(window.localStorage.getItem("this.vjezba"));
-    if (localStorage.Leda) this.Leda = JSON.parse(localStorage.Leda);
-    if (localStorage.Prsa) this.Prsa = JSON.parse(localStorage.Prsa);
+  async mounted() {
 
-    if (localStorage.Tricep) this.Tricep = JSON.parse(localStorage.Tricep);
+    this.userRef = await db.collection("exercises").doc(store.currentUser);
+    const allexercises = await this.userRef.get();
+    this.currentUserExercises = allexercises.data();
+    console.log(this.currentUserExercises);
 
-    if (localStorage.Bicep) this.Bicep = JSON.parse(localStorage.Bicep);
 
-    if (localStorage.Noge) this.Noge = JSON.parse(localStorage.Noge);
+
+    // if (localStorage.Biceps) this.Biceps = JSON.parse(localStorage.Biceps);
+    // if (localStorage.Leda) this.Leda = JSON.parse(localStorage.Leda);
+    // if (localStorage.Prsa) this.Prsa = JSON.parse(localStorage.Prsa);
+
+    // if (localStorage.Tricep) this.Tricep = JSON.parse(localStorage.Tricep);
+
+    // if (localStorage.Noge) this.Noge = JSON.parse(localStorage.Noge);
+
   },
   data() {
     return {
       Leda: [],
       Prsa: [],
-      Tricep: [],
-      Bicep: [],
+      Triceps: [],
+      Biceps: [],
       Noge: [],
+      currentUserExercises: {},
     };
-  },
+  }, 
+  methods: {
+      removeExe (kategorija, vjezba){
+        const index = this.currentUserExercises[kategorija].indexOf(vjezba);
+          this.currentUserExercises[kategorija].splice(index, 1);
+         this.userRef.set({[kategorija]:  this.currentUserExercises[kategorija]
+         }, { merge: true });
+      }
+  }
 };
 </script>
 

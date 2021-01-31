@@ -63,7 +63,7 @@
             svi ostali dijelovi tijela se ne miču!
           </p>
 
-          <button id="btn" @click="addExe(imgs.tricat)">Dodaj u moj program</button>
+          <button id="btn" @click="Exe(imgs.tricat)">Dodaj u moj program</button>
         </div>
       </div>
       <div class="car text-center">
@@ -109,6 +109,9 @@
 </template>
 
 <script>
+import store from '@/store';
+  import {db} from '@/firebase';
+
 export default {
   data() {
     return {
@@ -121,25 +124,24 @@ export default {
       },
     };
   },
-  methods: {
-     addExe(img) {
-      let keyName = "Tricep";
-      let noges = [];
-      if (localStorage[keyName]) {
-        noges = JSON.parse(localStorage[keyName]);
+   async mounted() {
+   console.log(store);
+    this.userRef = await db.collection("exercises").doc(store.currentUser);
+    const allexercises = await this.userRef.get();
+    this.currentUserExercises = allexercises.data();
+    console.log(this.currentUserExercises);
+   },
+ methods: {
+    addExe(img) {
+      let keyName = "Triceps";
+      if (this.currentUserExercises[keyName].includes(img)){
+        alert("Vježba je već dodana");
+      } else {
+          this.currentUserExercises[keyName].push(img);
+          this.userRef.set({[keyName]:  this.currentUserExercises[keyName]
+          }, { merge: true });
       }
-      let flag = true;
-
-      noges.forEach((url) => {
-        if (img == url) {
-          alert("Already added");
-          flag = false;
-        }
-      });
-      if (flag) noges.push(img);
-
-      localStorage[keyName] = JSON.stringify(noges);
-    },
-    }
+      },
+  },
 };
 </script>
