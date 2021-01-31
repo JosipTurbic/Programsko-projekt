@@ -43,9 +43,12 @@
                         <router-link to="/Signup" class="nav-link">Sign up</router-link>
                     </li>
                 </ul>
+                
+                    
                 <li v-if="store.currentUser" class="nav-item">
                         <a href="#" @click.prevent="logout()" >Odjavi se</a>
                     </li>
+                    
             </div>
         </nav>
 

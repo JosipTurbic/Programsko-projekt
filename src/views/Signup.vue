@@ -8,10 +8,20 @@
       <div class="col-sm">
         <form>
           <div class="form-group">
+                <label for="KorisnickoIme">Vaše Ime</label>
+                <input
+                type="text" 
+                v-model="name"
+                class="form-control"
+                id="KorisnickoIme"
+                placeholder="Unesite svoje ime"
+                />
+                </div>
+          <div class="form-group">
             <label for="exampleInputEmail1">Email adresa</label>
             <input 
             type="email" 
-            v-model="username"
+            v-model="email"
             class="form-control" 
             id="exampleInputEmail1" 
             aria-describedby="emailHelp" 
@@ -44,7 +54,7 @@
             </div>
 
 
-                <button type="button" @click="signup" class="btn btn-primary">Pošalji</button>
+                <button type="button"  @click="signup" class="btn btn-primary">Pošalji</button>
                 </form>
                 </div>
                 <div class="col-sm">
@@ -56,32 +66,47 @@
 
 <script>
   import {firebase} from '@/firebase';
+  import {db} from '@/firebase';
+  
 
 export default {
   name: "Signup",
   data(){
     return{
-      username: '',
+      email: '',
       password: '',
       passwordRepeat: '',
+      name:'',
+     
     };
     },
      
   
   methods: {
+  
+
       signup(){
+      if (this.password != this.passwordRepeat) {
+        alert (" Lozinke se ne podudaraju. Pokušajte ponovo.")
+      }
+      else if(this.name.length<1){
+          alert("Morate upisati ime")
+        }
+
+      
+      else{
         firebase
         .auth()
-        .createUserWithEmailAndPassword(this.username, this.password)
-        .then(
-          function()
-            {
-              console.log("Uspješna registracija");
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+                let id = this.email;
+                db.collection("users").doc(id).set({
+                    email: this.email,
+                    name: this.name
+                })
             })
-            .catch(function(error){
-              console.error("Došlo je do greške!", error)
-            });
-            console.log('Nastavak');
+         
+      }
       },
   },
 };
