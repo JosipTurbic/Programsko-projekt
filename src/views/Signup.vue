@@ -27,9 +27,7 @@
             aria-describedby="emailHelp" 
             placeholder="Unesi email"
             />
-            <small id="emailHelp" class="form-text text-muted">
-              Shh.. Nikome nećemo reći tvoju lozinku.
-              </small>
+           
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Lozinka</label>
@@ -40,6 +38,9 @@
                 id="exampleInputPassword1"
                 placeholder="Lozinka"
                 />
+                <small id="emailHelp1" class="form-text text-muted">
+              Lozinka mora sadržavati najmanje 8 znakova!
+              </small>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword2">Ponovljena lozinka</label>

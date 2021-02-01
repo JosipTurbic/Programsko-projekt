@@ -153,3 +153,29 @@ export default {
   },
 };
 </script>
+
+<style>
+.card-img-top {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 250px;
+}
+.card-body {
+  background-color: yellow;
+
+  font-weight: bold;
+}
+.card-header {
+  background-color: #00bfff;
+  border: solid #ffffff;
+  font-weight: bold;
+  color: #ffffff;
+}
+#btn {
+  color: #ffffff;
+  border-radius: 10px;
+  background-color: #00bfff;
+  font-weight: bold;
+}
+</style>

@@ -3,7 +3,7 @@
     <div class="col">
       <div class="car text-center">
         <div class="card-header">
-                Vježba 1 - Pregib bučicama u pretklonu  
+                Vježba 1 - Pregib bučicama u pretklonu  </div>
           <div class="card-body p-0">
 
             <p>
@@ -128,7 +128,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
 </template>
 <script>
 import store from '@/store';
@@ -176,3 +176,29 @@ export default {
   },
 };
 </script>
+
+<style>
+.card-img-top {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 250px;
+}
+.card-body {
+  background-color: yellow;
+
+  font-weight: bold;
+}
+.card-header {
+  background-color: #00bfff;
+  border: solid #ffffff;
+  font-weight: bold;
+  color: #ffffff;
+}
+#btn {
+  color: #ffffff;
+  border-radius: 10px;
+  background-color: #00bfff;
+  font-weight: bold;
+}
+</style>
