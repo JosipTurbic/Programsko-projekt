@@ -162,15 +162,23 @@ export default {
    console.log(store);
     this.userRef = await db.collection("exercises").doc(store.currentUser);
     const allexercises = await this.userRef.get();
-    this.currentUserExercises = allexercises.data();
+    if (allexercises.exists){
+      this.currentUserExercises = allexercises.data()
+    } else {
+      this.currentUserExercises = {}
+      }
     console.log(this.currentUserExercises);
   },
   methods: {
     addExe(img) {
       let keyName = "Noge";
-      if (this.currentUserExercises[keyName].includes(img)){
-        alert("Vježba je već dodana");
-      } else {
+     if (!this.currentUserExercises[keyName]) { 
+       this.currentUserExercises[keyName] = [];
+      } 
+      if(this.currentUserExercises[keyName].includes(img)){
+          alert("Vježba je već dodana");
+      }
+      else {
           this.currentUserExercises[keyName].push(img);
           this.userRef.set({[keyName]:  this.currentUserExercises[keyName]
           }, { merge: true });
