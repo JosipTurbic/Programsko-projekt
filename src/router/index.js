@@ -55,7 +55,7 @@ const routes = [
     path: '/Program',
     name: 'Program',
     meta: {
-      needsUser: false,
+      needsUser: true,
     },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
